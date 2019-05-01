@@ -6,14 +6,10 @@ import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -34,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private FirstFragment fstFragment;
+    private TrangChuFragment fstFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 //        Toolbar toolbar = findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 
-        fstFragment = new FirstFragment();
+        fstFragment = new TrangChuFragment();
         //anh xa
 //        mainScrollView = (ScrollView)findViewById(R.id.scrollvmain);
 
@@ -63,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
-        String URL = "http://210.245.111.217:480/api/values?id=1";
-        GetJSONFromServer(URL);
+//        String URL = "http://210.245.111.217:480/api/values?id=1";
+//        GetJSONFromServer(URL);
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -101,9 +97,9 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(fstFragment, "Trang chủ");
-        adapter.addFragment(new FirstFragment(), "Đăng ký khám");
-        adapter.addFragment(new FirstFragment(), "Bản đồ");
-        adapter.addFragment(new FirstFragment(), "Cá nhân");
+        adapter.addFragment(new TrangChuFragment(), "Đăng ký khám");
+        adapter.addFragment(new TrangChuFragment(), "Bản đồ");
+        adapter.addFragment(new CaNhanFragment(), "Cá nhân");
         viewPager.setAdapter(adapter);
     }
 
