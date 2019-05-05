@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".DangKyKhamHomeFragment">
+
+    <ScrollView
+        android:id="@+id/scrollvmain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/scrollviewcolor"
+        android:fillViewport="false"
+        android:scrollbarStyle="outsideOverlay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <Button
+                android:id="@+id/btnDangKyKhamMacDinh"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginLeft="@dimen/button_margin"
+                android:layout_marginRight="@dimen/button_margin"
+                android:background="@drawable/button_shape"
+                android:drawableLeft="@drawable/baseline_phone_24"
+                android:drawableRight="@drawable/baseline_keyboard_arrow_right_24"
+                android:drawablePadding="@dimen/button_margin"
+                android:text="Đăng ký khám mặc định"
+                android:textAlignment="textStart"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btnDangKyKhamDichVu"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginLeft="@dimen/button_margin"
+                android:layout_marginTop="@dimen/text_margin"
+                android:layout_marginRight="@dimen/button_margin"
+                android:background="@drawable/button_shape"
+                android:drawableLeft="@drawable/baseline_phone_24"
+                android:drawableRight="@drawable/baseline_keyboard_arrow_right_24"
+                android:drawablePadding="@dimen/button_margin"
+                android:text="Đăng ký khám dịch vụ"
+                android:textAlignment="textStart"
+                android:textAllCaps="false" />
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

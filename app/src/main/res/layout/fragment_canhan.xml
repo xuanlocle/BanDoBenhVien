@@ -23,8 +23,7 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@drawable/top_shape"
-                >
+                android:background="@drawable/top_shape">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/imageView"

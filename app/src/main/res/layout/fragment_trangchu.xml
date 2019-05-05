@@ -20,6 +20,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <View
+                android:id="@+id/viewTempUp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/colorPrimary"
+                android:visibility="gone" />
+
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="match_parent"

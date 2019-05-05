@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private TrangChuFragment fstFragment;
+    private TrangChuFragment trangChuFragment;
+    private CaNhanFragment caNhanFragment;
+    private DangKyKhamHomeFragment dangKyKhamHomeFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +41,11 @@ public class MainActivity extends AppCompatActivity {
 //        Toolbar toolbar = findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 
-        fstFragment = new TrangChuFragment();
+        trangChuFragment = new TrangChuFragment();
         //anh xa
 //        mainScrollView = (ScrollView)findViewById(R.id.scrollvmain);
-
+        dangKyKhamHomeFragment = new DangKyKhamHomeFragment();
+        caNhanFragment = new CaNhanFragment();
 
 
 ////        mainScrollView.fullScroll(ScrollView.FOCUSABLES_ALL);
@@ -96,42 +99,12 @@ public class MainActivity extends AppCompatActivity {
     }
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(fstFragment, "Trang chủ");
-        adapter.addFragment(new TrangChuFragment(), "Đăng ký khám");
+        adapter.addFragment(trangChuFragment, "Trang chủ");
+        adapter.addFragment(dangKyKhamHomeFragment, "Đăng ký khám");
         adapter.addFragment(new TrangChuFragment(), "Bản đồ");
-        adapter.addFragment(new CaNhanFragment(), "Cá nhân");
+        adapter.addFragment(caNhanFragment, "Cá nhân");
         viewPager.setAdapter(adapter);
     }
 
-    private void GetJSONFromServer(String URL){
-        RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
-        lstPhongBan = new ArrayList<String>();
-        JsonArrayRequest jarr = new JsonArrayRequest(Request.Method.GET, URL, null, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
 
-                try{
-
-                    for(int i=0;i<response.length();i++){
-                        JSONObject job = response.getJSONObject(i);
-                        String name = job.getString("TenPhongBan");
-                        lstPhongBan.add(name);
-                        fstFragment.setTextView(fstFragment.getTextView()+"\n"+name);
-//                        Toast.makeText(MainActivity.this, name , Toast.LENGTH_SHORT).show();
-                    }
-
-                } catch (Exception e){
-
-
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-
-            }
-        });
-        queue.add(jarr);
-    }
 }
