@@ -20,20 +20,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <View
-                android:id="@+id/viewTempUp"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:background="@color/colorPrimary"
-                android:visibility="gone" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-150dp"
-                android:layout_marginBottom="-100dp"
-                app:srcCompat="@drawable/banner_top_mobile" />
+           <include layout="@layout/view_top_trangchu"></include>
 
             <LinearLayout
                 android:layout_width="match_parent"
