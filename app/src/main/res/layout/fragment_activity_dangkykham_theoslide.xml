@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <!-- ViewSwitcher with three views first is ImageView, second is a layout in which we have two TextView's
@@ -14,42 +15,70 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="25dp"
             android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/top_shape">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imageView"
+                    app:civ_border_color="@color/scrollviewcolorDark"
+                    app:civ_border_width="2dp"
+                    android:layout_width="96dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/undefined_avatar" />
+            </FrameLayout>
 
             <Spinner
                 android:id="@+id/spinnerPhongKham"
-                android:layout_width="wrap_content"
-                android:layout_height="56dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:dropDownWidth="wrap_content"
+                android:gravity="center"
+                android:spinnerMode="dialog"
+                android:textAlignment="center" />
+            <Spinner
+                android:id="@+id/spinnerBacSi"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
 
                 android:layout_gravity="center"
                 android:dropDownWidth="wrap_content"
                 android:gravity="center"
                 android:spinnerMode="dialog"
                 android:textAlignment="center" />
-
             <EditText
                 android:id="@+id/edtNgayKham"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:ems="10"
                 android:focusable="false"
                 android:hint="Ngày khám"
                 android:inputType="date"
-                android:textAlignment="center" />
+                android:drawableLeft="@drawable/baseline_assignment_24"
+                android:drawablePadding="15dp"
+                android:textAlignment="textStart" />
 
             <EditText
                 android:id="@+id/edtGioKham"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:ems="10"
                 android:focusable="false"
                 android:hint="Giờ khám"
                 android:inputType="time"
-                android:textAlignment="center" />
+                android:drawablePadding="15dp"
+                android:textAlignment="textStart"
+                android:drawableLeft="@drawable/baseline_query_builder_24"
+                />
 
             <EditText
+                android:id="@+id/edtGhiChu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="top|left"
