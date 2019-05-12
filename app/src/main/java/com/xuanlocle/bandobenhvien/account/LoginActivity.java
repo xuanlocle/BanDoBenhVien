@@ -76,8 +76,11 @@ public class LoginActivity extends AppCompatActivity {
         if(result!=null){
             if(result.getContents()==null)
                 Toast.makeText(this, "Không quét được mã!", Toast.LENGTH_SHORT).show();
-            else
+            else{
                 Toast.makeText(this, result.getContents(), Toast.LENGTH_SHORT).show();
+                Intent _intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(_intent);
+            }
         }
 
 
